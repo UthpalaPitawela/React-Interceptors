@@ -1,19 +1,24 @@
 import { useEffect, useState } from "react";
 import {
-  getCatDetails,
   getCatDetailsAxios,
   getCatDetailsFetchAPI,
+  getCatDetailsFetchIntercept,
 } from "../../services/catsService";
 import "./viewCatsStyles.scss";
 
 const getCatPics = async () => {
-  const response = await getCatDetailsFetchAPI();
-  // const response = await getCatDetailsAxios();
-  console.log("response", response);
+  // With the axios interceptor
+  const response = await getCatDetailsAxios();
+
+  // With the fetch API interceptor using Monkey patching method
+  //const response = await getCatDetailsFetchAPI();
+
+  // With the fetch API interceptor using fetch-intercept library
+  // const response = await getCatDetailsFetchIntercept();
   return response;
 };
 
-export const ViewCatsAxios = () => {
+export const ViewCats = () => {
   const [catPics, setCatPics] = useState([]);
   useEffect(() => {
     getCatPics().then((pic) => setCatPics(pic));

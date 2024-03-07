@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import { ViewCatsAxios } from './components/viewCatsAxios/viewCatsAxios';
+import { ViewCats } from './components/viewCats/viewCats';
 
 function App() {
   return (
     <div className="App">
       <h1> Cats Images</h1>
-      <ViewCatsAxios/>
+      <ViewCats/>
     </div>
   );
 }

@@ -5,7 +5,6 @@ export const axiosRequestInterceptor = (baseEndPoint, apiKey) => {
     baseURL: baseEndPoint, // our API base URL
   });
 
-  // Request interceptor for adding the bearer token
   api.interceptors.request.use(
     (config) => {
       // If use api keys
